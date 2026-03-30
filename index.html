@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>AKA Studio · Estudio Musical en Barcelona</title>
+  <!-- Google Fonts + Font Awesome CDN -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #0a0a0f;
+      color: #f0f0f0;
+      line-height: 1.5;
+      scroll-behavior: smooth;
+    }
+
+    /* Custom scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #1a1a1f;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #c9a53b;
+      border-radius: 10px;
+    }
+
+    /* global container */
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    /* HEADER / NAV */
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(10, 10, 15, 0.85);
+      backdrop-filter: blur(12px);
+      z-index: 1000;
+      border-bottom: 1px solid rgba(201, 165, 59, 0.3);
+      transition: all 0.3s ease;
+    }
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.2rem 2rem;
+      flex-wrap: wrap;
+    }
+    .logo h1 {
+      font-size: 1.9rem;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      background: linear-gradient(135deg, #f5e7c8, #c9a53b);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .logo span {
+      font-size: 0.9rem;
+      font-weight: 400;
+      color: #c9a53b;
+      letter-spacing: 2px;
+    }
+    .nav-links {
+      display: flex;
+      gap: 2.2rem;
+      list-style: none;
+    }
+    .nav-links a {
+      text-decoration: none;
+      color: #e0e0e0;
+      font-weight: 500;
+      transition: 0.2s;
+      font-size: 1rem;
+    }
+    .nav-links a:hover, .nav-links a.active {
+      color: #c9a53b;
+    }
+    .menu-toggle {
+      display: none;
+      font-size: 1.8rem;
+      cursor: pointer;
+      color: #c9a53b;
+    }
+
+    /* HERO SECTION */
+    .hero {
+      min-height: 100vh;
+      background: linear-gradient(135deg, rgba(0,0,0,0.75), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80') center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      text-align: center;
+      position: relative;
+    }
+    .hero-content {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+    .hero h2 {
+      font-size: 4rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+      animation: fadeUp 0.8s ease;
+    }
+    .hero p {
+      font-size: 1.3rem;
+      margin-bottom: 2rem;
+      color: #ddd;
+      animation: fadeUp 0.8s 0.1s both;
+    }
+    .btn-gold {
+      background: #c9a53b;
+      color: #0a0a0f;
+      border: none;
+      padding: 0.9rem 2.5rem;
+      font-size: 1rem;
+      font-weight: 700;
+      border-radius: 40px;
+      cursor: pointer;
+      transition: 0.25s;
+      text-decoration: none;
+      display: inline-block;
+      box-shadow: 0 8px 20px rgba(201,165,59,0.3);
+    }
+    .btn-gold:hover {
+      background: #e0b852;
+      transform: translateY(-3px);
+      box-shadow: 0 12px 25px rgba(201,165,59,0.4);
+    }
+    @keyframes fadeUp {
+      0% { opacity: 0; transform: translateY(25px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    /* secciones general */
+    section {
+      padding: 5rem 0;
+    }
+    .section-title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 3rem;
+      position: relative;
+    }
+    .section-title:after {
+      content: '';
+      width: 70px;
+      height: 3px;
+      background: #c9a53b;
+      position: absolute;
+      bottom: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      border-radius: 3px;
+    }
+
+    /* estudio features */
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-top: 1rem;
+    }
+    .feature-card {
+      background: #111117;
+      border-radius: 24px;
+      padding: 2rem 1.5rem;
+      text-align: center;
+      transition: 0.25s;
+      border: 1px solid #2a2a2f;
+    }
+    .feature-card i {
+      font-size: 2.8rem;
+      color: #c9a53b;
+      margin-bottom: 1rem;
+    }
+    .feature-card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 0.75rem;
+    }
+    .feature-card p {
+      color: #b0b0b0;
+    }
+    .feature-card:hover {
+      transform: translateY(-8px);
+      border-color: #c9a53b;
+      background: #13131c;
+    }
+
+    /* SALAS / ESTUDIOS */
+    .rooms-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+    .room-card {
+      background: #111117;
+      border-radius: 28px;
+      overflow: hidden;
+      transition: 0.3s;
+      border: 1px solid #26262c;
+    }
+    .room-img {
+      height: 220px;
+      background-size: cover;
+      background-position: center;
+    }
+    .room-card h3 {
+      font-size: 1.7rem;
+      margin: 1.2rem 1.2rem 0.5rem;
+    }
+    .room-card p {
+      margin: 0 1.2rem 1rem;
+      color: #bcbcbc;
+    }
+    .room-detail {
+      margin: 0 1.2rem 1.5rem;
+      display: flex;
+      gap: 1rem;
+      font-size: 0.85rem;
+      color: #c9a53b;
+    }
+    .room-detail i {
+      margin-right: 5px;
+    }
+
+    /* EQUIPAMIENTO */
+    .gear-showcase {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+      background: #0c0c12;
+      border-radius: 48px;
+      padding: 2rem;
+    }
+    .gear-item {
+      text-align: center;
+      min-width: 130px;
+    }
+    .gear-item i {
+      font-size: 3rem;
+      background: #1e1e28;
+      padding: 1rem;
+      border-radius: 60px;
+      color: #c9a53b;
+    }
+    .gear-item p {
+      margin-top: 0.8rem;
+      font-weight: 500;
+    }
+
+    /* ubicación barcelona */
+    .location-box {
+      display: flex;
+      flex-wrap: wrap;
+      background: #111117;
+      border-radius: 32px;
+      overflow: hidden;
+      border: 1px solid #2a2a2f;
+    }
+    .location-info {
+      flex: 1;
+      padding: 2rem;
+    }
+    .location-info i {
+      color: #c9a53b;
+      margin-right: 10px;
+    }
+    .location-info h3 {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+    }
+    .map-placeholder {
+      flex: 1;
+      min-height: 280px;
+      background: #1e1e28;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .map-placeholder i {
+      font-size: 3rem;
+      color: #c9a53b;
+    }
+
+    /* testimonios */
+    .testimonials {
+      background: #07070c;
+    }
+    .testi-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 2rem;
+    }
+    .testi-card {
+      background: #111117;
+      padding: 1.8rem;
+      border-radius: 28px;
+      border-left: 5px solid #c9a53b;
+    }
+    .testi-card p {
+      font-style: italic;
+      margin-bottom: 1rem;
+      color: #cfcfcf;
+    }
+    .testi-card h4 {
+      font-weight: 700;
+      color: #c9a53b;
+    }
+
+    /* formulario contacto */
+    .contact-form {
+      max-width: 700px;
+      margin: 0 auto;
+      background: #111117;
+      padding: 2rem;
+      border-radius: 32px;
+      border: 1px solid #2a2a2f;
+    }
+    .form-group {
+      margin-bottom: 1.2rem;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 1rem;
+      background: #1c1c24;
+      border: 1px solid #2f2f38;
+      border-radius: 24px;
+      color: white;
+      font-family: 'Inter', sans-serif;
+      transition: 0.2s;
+    }
+    input:focus, textarea:focus {
+      outline: none;
+      border-color: #c9a53b;
+    }
+    .submit-btn {
+      background: #c9a53b;
+      color: #0a0a0f;
+      font-weight: bold;
+      border: none;
+      padding: 0.9rem;
+      width: 100%;
+      border-radius: 40px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+    .submit-btn:hover {
+      background: #dbb84c;
+    }
+
+    /* footer */
+    footer {
+      background: #030305;
+      text-align: center;
+      padding: 2rem 0;
+      border-top: 1px solid #1e1e26;
+    }
+    .social-icons a {
+      color: #ccc;
+      font-size: 1.5rem;
+      margin: 0 12px;
+      transition: 0.2s;
+      display: inline-block;
+    }
+    .social-icons a:hover {
+      color: #c9a53b;
+      transform: scale(1.1);
+    }
+
+    /* responsive */
+    @media (max-width: 850px) {
+      .navbar {
+        padding: 1rem 1.5rem;
+      }
+      .menu-toggle {
+        display: block;
+      }
+      .nav-links {
+        position: fixed;
+        top: 70px;
+        left: -100%;
+        background: #0a0a0fe6;
+        backdrop-filter: blur(16px);
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        padding: 2rem 0;
+        gap: 1.8rem;
+        transition: 0.3s;
+        border-bottom: 1px solid #c9a53b;
+      }
+      .nav-links.active {
+        left: 0;
+      }
+      .hero h2 {
+        font-size: 2.7rem;
+      }
+      .container {
+        padding: 0 1.5rem;
+      }
+      .section-title {
+        font-size: 2rem;
+      }
+    }
+    @media (max-width: 550px) {
+      .hero h2 {
+        font-size: 2rem;
+      }
+      .hero p {
+        font-size: 1rem;
+      }
+      .feature-card, .room-card {
+        margin: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="navbar">
+    <div class="logo">
+      <h1>AKA STUDIO</h1>
+      <span>· barcelona sound foundry ·</span>
+    </div>
+    <div class="menu-toggle" id="mobile-menu">
+      <i class="fas fa-bars"></i>
+    </div>
+    <ul class="nav-links" id="nav-list">
+      <li><a href="#inicio" class="nav-link">Inicio</a></li>
+      <li><a href="#estudio" class="nav-link">Estudio</a></li>
+      <li><a href="#salas" class="nav-link">Salas</a></li>
+      <li><a href="#contacto" class="nav-link">Contacto</a></li>
+    </ul>
+  </div>
+</header>
+
+<main>
+  <!-- HERO / INICIO -->
+  <section id="inicio" class="hero">
+    <div class="hero-content">
+      <h2>Donde la música <br> encuentra su <span style="color:#c9a53b;">hogar</span></h2>
+      <p>Estudio profesional en el corazón de Barcelona · Grabación, mezcla, mastering y vibra única</p>
+      <a href="#contacto" class="btn-gold">Reserva tu sesión <i class="fas fa-arrow-right"></i></a>
+    </div>
+  </section>
+
+  <!-- ESTUDIO / FEATURES -->
+  <section id="estudio">
+    <div class="container">
+      <h2 class="section-title">Espacio creativo</h2>
+      <div class="features-grid">
+        <div class="feature-card">
+          <i class="fas fa-microphone-alt"></i>
+          <h3>Acústica de élite</h3>
+          <p>Salas diseñadas por ingenieros acústicos con aislamiento total y geometría variable.</p>
+        </div>
+        <div class="feature-card">
+          <i class="fas fa-headphones"></i>
+          <h3>Equipamiento analógico</h3>
+          <p>Consolas vintage, preamps de válvulas, micrófonos de estudio y monitores de referencia.</p>
+        </div>
+        <div class="feature-card">
+          <i class="fas fa-chalkboard-user"></i>
+          <h3>Productores in-house</h3>
+          <p>Ingenieros de sonido con experiencia en pop, electrónica, rock y urbano.</p>
+        </div>
+        <div class="feature-card">
+          <i class="fas fa-wine-bottle"></i>
+          <h3>Vibe única</h3>
+          <p>Zona lounge, terraza con vistas y café de especialidad para inspiración sin límites.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SALAS DE GRABACIÓN -->
+  <section id="salas" style="background: #0c0c12;">
+    <div class="container">
+      <h2 class="section-title">Nuestras salas</h2>
+      <div class="rooms-grid">
+        <div class="room-card">
+          <div class="room-img" style="background-image: url('https://images.unsplash.com/photo-1586899028174-e7098604235b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');"></div>
+          <h3>Sala Main · AKA</h3>
+          <p>Espacio principal de 70m², ideal para bandas completas y sesiones orquestales. Control room con visión directa.</p>
+          <div class="room-detail"><span><i class="fas fa-chart-line"></i> 48 canales</span> <span><i class="fas fa-drum"></i> ISO Booth</span></div>
+        </div>
+        <div class="room-card">
+          <div class="room-img" style="background-image: url('https://images.unsplash.com/photo-1511379938547-c1f69419868d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');"></div>
+          <h3>The Loft</h3>
+          <p>Estudio íntimo con acabados en madera, especial para productores, voces y sesiones acústicas.</p>
+          <div class="room-detail"><span><i class="fas fa-sliders-h"></i> Neve 1073</span> <span><i class="fas fa-guitar"></i> Amps vintage</span></div>
+        </div>
+        <div class="room-card">
+          <div class="room-img" style="background-image: url('https://images.unsplash.com/photo-1598653222000-6b7b7a552625?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');"></div>
+          <h3>Mastering Suite</h3>
+          <p>Postproducción y mastering con monitores ATC, conversores de gama alta y tratamiento acústico referencia.</p>
+          <div class="room-detail"><span><i class="fas fa-waveform"></i> 5.1 Surround</span> <span><i class="fas fa-equalizer"></i> Maselec</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EQUIPAMIENTO DESTACADO -->
+  <section>
+    <div class="container">
+      <h2 class="section-title">Gear que inspira</h2>
+      <div class="gear-showcase">
+        <div class="gear-item"><i class="fas fa-microphone"></i><p>Neumann U87</p></div>
+        <div class="gear-item"><i class="fas fa-music"></i><p>API 1608</p></div>
+        <div class="gear-item"><i class="fas fa-guitar"></i><p>Fender '65 Twin</p></div>
+        <div class="gear-item"><i class="fas fa-headphones"></i><p>Audeze LCD-X</p></div>
+        <div class="gear-item"><i class="fas fa-database"></i><p>Pro Tools | HDX</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- UBICACIÓN BARCELONA -->
+  <section style="background: #0c0c12;">
+    <div class="container">
+      <h2 class="section-title">En el corazón de Barcelona</h2>
+      <div class="location-box">
+        <div class="location-info">
+          <h3><i class="fas fa-map-marker-alt"></i> Poblenou · Distrito 22@</h3>
+          <p>Carrer de Llull, 128, 08005 Barcelona</p>
+          <p><i class="fas fa-train"></i> Metro L4 · Llacuna | Bus H16, V27</p>
+          <p><i class="fas fa-clock"></i> Lunes a sábado: 10:00 – 22:00 · Domingos sesiones especiales bajo reserva.</p>
+          <p><i class="fas fa-parking"></i> Parking gratuito para músicos con equipo.</p>
+          <a href="#contacto" class="btn-gold" style="margin-top: 1rem; display: inline-block;">Cómo llegar</a>
+        </div>
+        <div class="map-placeholder">
+          <i class="fas fa-map-marked-alt fa-3x"></i>
+          <p><strong>📍 Zona creativa de Barcelona</strong><br> A 5 min del mar, rodeado de estudios y salas de conciertos.</p>
+          <small>Mapa interactivo — disponibilidad bajo cita</small>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIOS -->
+  <section class="testimonials">
+    <div class="container">
+      <h2 class="section-title">Lo que dicen los artistas</h2>
+      <div class="testi-grid">
+        <div class="testi-card">
+          <p>"AKA Studio es el lugar donde dimos vida a nuestro último disco. El equipo técnico es impecable y la acústica de la sala principal es alucinante. Barcelona tiene un nuevo templo del sonido."</p>
+          <h4>— Maria V. · productora</h4>
+        </div>
+        <div class="testi-card">
+          <p>"He trabajado en estudios de Londres y Berlín, pero la vibra y el equipo de AKA están a otro nivel. El loft es perfecto para sesiones de voz, y el trato humano es lo mejor."</p>
+          <h4>— J. Keaton · cantautor</h4>
+        </div>
+        <div class="testi-card">
+          <p>"El mastering suite es una joya. Conseguimos un master competitivo con una claridad impresionante. Sin duda repetiré para mi próximo proyecto."</p>
+          <h4>— D. Rios · ingeniero de mezcla</h4>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTO Y RESERVA -->
+  <section id="contacto">
+    <div class="container">
+      <h2 class="section-title">Reserva tu sesión</h2>
+      <div class="contact-form">
+        <form id="contactForm" action="#" method="post">
+          <div class="form-group">
+            <input type="text" id="nombre" placeholder="Nombre completo *" required>
+          </div>
+          <div class="form-group">
+            <input type="email" id="email" placeholder="Email *" required>
+          </div>
+          <div class="form-group">
+            <input type="tel" id="telefono" placeholder="Teléfono (opcional)">
+          </div>
+          <div class="form-group">
+            <select id="salaInteres" style="background:#1c1c24; color:white; padding:1rem; border-radius:24px; width:100%; border:1px solid #2f2f38;">
+              <option value="Sala Main AKA">Sala Main AKA</option>
+              <option value="The Loft">The Loft</option>
+              <option value="Mastering Suite">Mastering Suite</option>
+              <option value="No estoy seguro/a">No estoy seguro/a, quiero asesoría</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <textarea rows="3" id="mensaje" placeholder="Cuéntanos sobre tu proyecto, fechas deseadas..."></textarea>
+          </div>
+          <button type="submit" class="submit-btn"><i class="fas fa-calendar-check"></i> Solicitar presupuesto</button>
+          <p id="form-feedback" style="margin-top: 1rem; font-size: 0.85rem; text-align: center;"></p>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="social-icons">
+    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+    <a href="#" aria-label="Spotify"><i class="fab fa-spotify"></i></a>
+    <a href="#" aria-label="Youtube"><i class="fab fa-youtube"></i></a>
+    <a href="#" aria-label="SoundCloud"><i class="fab fa-soundcloud"></i></a>
+  </div>
+  <p style="margin-top: 1.5rem; font-size: 0.8rem;">&copy; 2025 AKA STUDIO · Estudio musical Barcelona · Poblenou · <i class="fas fa-head-side-headphones"></i> Donde los sueños suenan en grande</p>
+</footer>
+
+<script>
+  // Mobile menu toggle
+  const mobileBtn = document.getElementById('mobile-menu');
+  const navList = document.getElementById('nav-list');
+  mobileBtn.addEventListener('click', () => {
+    navList.classList.toggle('active');
+  });
+
+  // Cerrar menú al hacer click en un enlace
+  const navLinks = document.querySelectorAll('.nav-link');
+  navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      navList.classList.remove('active');
+    });
+  });
+
+  // Scroll suave para enlaces internos (todos los que empiezan con #)
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      const targetId = this.getAttribute('href');
+      if(targetId === "#" || targetId === "") return;
+      const targetElement = document.querySelector(targetId);
+      if(targetElement) {
+        e.preventDefault();
+        targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        // Si el menú está activo en móvil lo cerramos
+        if(navList.classList.contains('active')) navList.classList.remove('active');
+      }
+    });
+  });
+
+  // Simple form handler (simulación de envío + feedback)
+  const form = document.getElementById('contactForm');
+  const feedback = document.getElementById('form-feedback');
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const nombre = document.getElementById('nombre').value.trim();
+    const email = document.getElementById('email').value.trim();
+    if(!nombre || !email) {
+      feedback.innerHTML = '<span style="color:#e0b852;">⚠️ Por favor, completa nombre y email.</span>';
+      return;
+    }
+    // Simulación de envío exitoso
+    feedback.innerHTML = '<span style="color:#c9a53b;">✨ ¡Gracias! Nos pondremos en contacto en 24h para coordinar tu sesión en Barcelona ✨</span>';
+    form.reset();
+    setTimeout(() => {
+      feedback.innerHTML = '';
+    }, 5000);
+  });
+
+  // Resaltar link activo según scroll
+  const sections = document.querySelectorAll("section");
+  const navItems = document.querySelectorAll(".nav-link");
+  window.addEventListener("scroll", () => {
+    let current = "";
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop - 120;
+      const sectionBottom = sectionTop + section.offsetHeight;
+      if(scrollY >= sectionTop && scrollY < sectionBottom) {
+        current = section.getAttribute("id");
+      }
+    });
+    navItems.forEach(item => {
+      item.classList.remove("active");
+      if(item.getAttribute("href") === `#${current}`) {
+        item.classList.add("active");
+      }
+    });
+    // Si no hay sección activa (por hero) o inicio
+    if(!current && window.scrollY < 200) {
+      navItems.forEach(link => {
+        if(link.getAttribute("href") === "#inicio") link.classList.add("active");
+        else link.classList.remove("active");
+      });
+    }
+  });
+</script>
+</body>
+</html>
