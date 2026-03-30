@@ -3,8 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-  <title>AKA Studio · Estudio Musical en Barcelona</title>
-  <!-- Google Fonts + Font Awesome CDN -->
+  
+  <!-- SEO BRUTAL - Estudio Musical Barcelona -->
+  <title>AKA Studio | Estudio Musical en Sant Adrià de Besòs · Mezcla y Master Profesional</title>
+  <meta name="description" content="AKA Studio: Estudio musical en Sant Adrià de Besòs (Barcelona). Especialistas en mezcla y master 80, grabación profesional y producción musical. Equipo de élite, sonido analógico y resultados de estudio. ¡Reserva tu sesión!">
+  <meta name="keywords" content="estudio musical barcelona, estudio grabación barcelona, mezcla y master barcelona, 80 mezcla y master, estudio master profesional, sala de ensayo sant adrià, productor musical, estudio de grabación, aka studio">
+  <meta name="author" content="AKA Studio">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="AKA Studio | Estudio Musical Barcelona · Mezcla y Master 80">
+  <meta property="og:description" content="Estudio de grabación profesional en Sant Adrià de Besòs. Especialistas en mezcla y master, sonido analógico y vibra única. ¡Graba tu música con los mejores!">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_ES">
+  
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
@@ -24,7 +34,6 @@
       scroll-behavior: smooth;
     }
 
-    /* Custom scrollbar */
     ::-webkit-scrollbar {
       width: 8px;
     }
@@ -36,14 +45,13 @@
       border-radius: 10px;
     }
 
-    /* global container */
     .container {
       max-width: 1280px;
       margin: 0 auto;
       padding: 0 2rem;
     }
 
-    /* HEADER / NAV */
+    /* HEADER */
     header {
       position: fixed;
       top: 0;
@@ -52,7 +60,6 @@
       backdrop-filter: blur(12px);
       z-index: 1000;
       border-bottom: 1px solid rgba(201, 165, 59, 0.3);
-      transition: all 0.3s ease;
     }
     .navbar {
       display: flex;
@@ -86,7 +93,6 @@
       color: #e0e0e0;
       font-weight: 500;
       transition: 0.2s;
-      font-size: 1rem;
     }
     .nav-links a:hover, .nav-links a.active {
       color: #c9a53b;
@@ -98,14 +104,13 @@
       color: #c9a53b;
     }
 
-    /* HERO SECTION */
+    /* HERO */
     .hero {
       min-height: 100vh;
-      background: linear-gradient(135deg, rgba(0,0,0,0.75), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80') center/cover no-repeat;
+      background: linear-gradient(135deg, rgba(0,0,0,0.8), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80') center/cover no-repeat;
       display: flex;
       align-items: center;
       text-align: center;
-      position: relative;
     }
     .hero-content {
       max-width: 900px;
@@ -141,14 +146,12 @@
     .btn-gold:hover {
       background: #e0b852;
       transform: translateY(-3px);
-      box-shadow: 0 12px 25px rgba(201,165,59,0.4);
     }
     @keyframes fadeUp {
       0% { opacity: 0; transform: translateY(25px); }
       100% { opacity: 1; transform: translateY(0); }
     }
 
-    /* secciones general */
     section {
       padding: 5rem 0;
     }
@@ -171,12 +174,11 @@
       border-radius: 3px;
     }
 
-    /* estudio features */
+    /* Features / Servicios */
     .features-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 2rem;
-      margin-top: 1rem;
     }
     .feature-card {
       background: #111117;
@@ -201,73 +203,60 @@
     .feature-card:hover {
       transform: translateY(-8px);
       border-color: #c9a53b;
-      background: #13131c;
     }
 
-    /* SALAS / ESTUDIOS */
-    .rooms-grid {
+    /* 80 MIX & MASTER DESTACADO */
+    .highlight-service {
+      background: linear-gradient(145deg, #13131c, #0a0a0f);
+      border: 2px solid #c9a53b;
+      transform: scale(1.02);
+    }
+
+    /* Portafolio de canciones mezcladas */
+    .portfolio-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 2rem;
     }
-    .room-card {
+    .track-card {
       background: #111117;
       border-radius: 28px;
       overflow: hidden;
-      transition: 0.3s;
-      border: 1px solid #26262c;
+      transition: 0.2s;
+      border: 1px solid #2a2a2f;
     }
-    .room-img {
-      height: 220px;
-      background-size: cover;
-      background-position: center;
+    .track-img {
+      height: 160px;
+      background: linear-gradient(135deg, #1e1e2a, #0a0a0f);
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
-    .room-card h3 {
-      font-size: 1.7rem;
-      margin: 1.2rem 1.2rem 0.5rem;
+    .track-img i {
+      font-size: 4rem;
+      color: #c9a53b;
+      opacity: 0.7;
     }
-    .room-card p {
-      margin: 0 1.2rem 1rem;
+    .track-card h3 {
+      font-size: 1.4rem;
+      margin: 1rem 1rem 0.5rem;
+    }
+    .track-card p {
+      margin: 0 1rem 1rem;
       color: #bcbcbc;
     }
-    .room-detail {
-      margin: 0 1.2rem 1.5rem;
-      display: flex;
-      gap: 1rem;
-      font-size: 0.85rem;
+    .track-link {
+      display: inline-block;
+      margin: 0 1rem 1.5rem;
       color: #c9a53b;
-    }
-    .room-detail i {
-      margin-right: 5px;
-    }
-
-    /* EQUIPAMIENTO */
-    .gear-showcase {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 2rem;
-      background: #0c0c12;
-      border-radius: 48px;
-      padding: 2rem;
-    }
-    .gear-item {
-      text-align: center;
-      min-width: 130px;
-    }
-    .gear-item i {
-      font-size: 3rem;
-      background: #1e1e28;
-      padding: 1rem;
-      border-radius: 60px;
-      color: #c9a53b;
-    }
-    .gear-item p {
-      margin-top: 0.8rem;
+      text-decoration: none;
       font-weight: 500;
     }
+    .track-link i {
+      margin-left: 5px;
+    }
 
-    /* ubicación barcelona */
+    /* Ubicación Sant Adrià de Besòs */
     .location-box {
       display: flex;
       flex-wrap: wrap;
@@ -284,26 +273,17 @@
       color: #c9a53b;
       margin-right: 10px;
     }
-    .location-info h3 {
-      font-size: 1.8rem;
-      margin-bottom: 1rem;
-    }
-    .map-placeholder {
+    .map-container {
       flex: 1;
-      min-height: 280px;
-      background: #1e1e28;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      gap: 10px;
+      min-height: 300px;
     }
-    .map-placeholder i {
-      font-size: 3rem;
-      color: #c9a53b;
+    .map-container iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
     }
 
-    /* testimonios */
+    /* Testimonios */
     .testimonials {
       background: #07070c;
     }
@@ -328,7 +308,16 @@
       color: #c9a53b;
     }
 
-    /* formulario contacto */
+    /* Contacto */
+    .contact-info-bar {
+      text-align: center;
+      margin-bottom: 2rem;
+      font-size: 1.1rem;
+    }
+    .contact-info-bar i {
+      color: #c9a53b;
+      margin-right: 8px;
+    }
     .contact-form {
       max-width: 700px;
       margin: 0 auto;
@@ -340,7 +329,7 @@
     .form-group {
       margin-bottom: 1.2rem;
     }
-    input, textarea {
+    input, textarea, select {
       width: 100%;
       padding: 1rem;
       background: #1c1c24;
@@ -348,9 +337,8 @@
       border-radius: 24px;
       color: white;
       font-family: 'Inter', sans-serif;
-      transition: 0.2s;
     }
-    input:focus, textarea:focus {
+    input:focus, textarea:focus, select:focus {
       outline: none;
       border-color: #c9a53b;
     }
@@ -364,13 +352,8 @@
       border-radius: 40px;
       font-size: 1rem;
       cursor: pointer;
-      transition: 0.2s;
-    }
-    .submit-btn:hover {
-      background: #dbb84c;
     }
 
-    /* footer */
     footer {
       background: #030305;
       text-align: center;
@@ -389,14 +372,8 @@
       transform: scale(1.1);
     }
 
-    /* responsive */
     @media (max-width: 850px) {
-      .navbar {
-        padding: 1rem 1.5rem;
-      }
-      .menu-toggle {
-        display: block;
-      }
+      .menu-toggle { display: block; }
       .nav-links {
         position: fixed;
         top: 70px;
@@ -409,31 +386,11 @@
         padding: 2rem 0;
         gap: 1.8rem;
         transition: 0.3s;
-        border-bottom: 1px solid #c9a53b;
       }
-      .nav-links.active {
-        left: 0;
-      }
-      .hero h2 {
-        font-size: 2.7rem;
-      }
-      .container {
-        padding: 0 1.5rem;
-      }
-      .section-title {
-        font-size: 2rem;
-      }
-    }
-    @media (max-width: 550px) {
-      .hero h2 {
-        font-size: 2rem;
-      }
-      .hero p {
-        font-size: 1rem;
-      }
-      .feature-card, .room-card {
-        margin: 0;
-      }
+      .nav-links.active { left: 0; }
+      .hero h2 { font-size: 2.7rem; }
+      .section-title { font-size: 2rem; }
+      .container { padding: 0 1.5rem; }
     }
   </style>
 </head>
@@ -443,171 +400,142 @@
   <div class="navbar">
     <div class="logo">
       <h1>AKA STUDIO</h1>
-      <span>· barcelona sound foundry ·</span>
+      <span>· sant adrià de besòs · mezcla & master ·</span>
     </div>
-    <div class="menu-toggle" id="mobile-menu">
-      <i class="fas fa-bars"></i>
-    </div>
+    <div class="menu-toggle" id="mobile-menu"><i class="fas fa-bars"></i></div>
     <ul class="nav-links" id="nav-list">
       <li><a href="#inicio" class="nav-link">Inicio</a></li>
-      <li><a href="#estudio" class="nav-link">Estudio</a></li>
-      <li><a href="#salas" class="nav-link">Salas</a></li>
+      <li><a href="#servicios" class="nav-link">Servicios</a></li>
+      <li><a href="#proyectos" class="nav-link">Proyectos</a></li>
       <li><a href="#contacto" class="nav-link">Contacto</a></li>
     </ul>
   </div>
 </header>
 
 <main>
-  <!-- HERO / INICIO -->
   <section id="inicio" class="hero">
     <div class="hero-content">
-      <h2>Donde la música <br> encuentra su <span style="color:#c9a53b;">hogar</span></h2>
-      <p>Estudio profesional en el corazón de Barcelona · Grabación, mezcla, mastering y vibra única</p>
+      <h2>Sonido analógico <br><span style="color:#c9a53b;">· 80 mezcla y master ·</span></h2>
+      <p>Estudio musical profesional en Sant Adrià de Besòs (Barcelona). Grabación, mezcla y mastering con la calidez del hardware vintage.</p>
       <a href="#contacto" class="btn-gold">Reserva tu sesión <i class="fas fa-arrow-right"></i></a>
     </div>
   </section>
 
-  <!-- ESTUDIO / FEATURES -->
-  <section id="estudio">
+  <!-- SERVICIOS DESTACADOS (solo música) -->
+  <section id="servicios">
     <div class="container">
-      <h2 class="section-title">Espacio creativo</h2>
+      <h2 class="section-title">Servicios de estudio</h2>
       <div class="features-grid">
+        <div class="feature-card highlight-service">
+          <i class="fas fa-sliders-h"></i>
+          <h3>80 Mezcla & Master</h3>
+          <p>El sello AKA: mezcla analógica con consola vintage, mastering profesional para darle a tu música la potencia y calidez de los grandes estudios.</p>
+        </div>
         <div class="feature-card">
           <i class="fas fa-microphone-alt"></i>
-          <h3>Acústica de élite</h3>
-          <p>Salas diseñadas por ingenieros acústicos con aislamiento total y geometría variable.</p>
+          <h3>Grabación profesional</h3>
+          <p>Sala insonorizada, micrófonos de alta gama (Neumann, AKG) y preamps valvulares para capturar cada matiz.</p>
         </div>
         <div class="feature-card">
           <i class="fas fa-headphones"></i>
-          <h3>Equipamiento analógico</h3>
-          <p>Consolas vintage, preamps de válvulas, micrófonos de estudio y monitores de referencia.</p>
-        </div>
-        <div class="feature-card">
-          <i class="fas fa-chalkboard-user"></i>
-          <h3>Productores in-house</h3>
-          <p>Ingenieros de sonido con experiencia en pop, electrónica, rock y urbano.</p>
-        </div>
-        <div class="feature-card">
-          <i class="fas fa-wine-bottle"></i>
-          <h3>Vibe única</h3>
-          <p>Zona lounge, terraza con vistas y café de especialidad para inspiración sin límites.</p>
+          <h3>Producción musical</h3>
+          <p>Productores in-house especializados en pop, urbano, indie y electrónica. Arreglos, beats y dirección artística.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- SALAS DE GRABACIÓN -->
-  <section id="salas" style="background: #0c0c12;">
+  <!-- PORTAFOLIO: CANCIONES MEZCLADAS -->
+  <section id="proyectos" style="background: #0c0c12;">
     <div class="container">
-      <h2 class="section-title">Nuestras salas</h2>
-      <div class="rooms-grid">
-        <div class="room-card">
-          <div class="room-img" style="background-image: url('https://images.unsplash.com/photo-1586899028174-e7098604235b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');"></div>
-          <h3>Sala Main · AKA</h3>
-          <p>Espacio principal de 70m², ideal para bandas completas y sesiones orquestales. Control room con visión directa.</p>
-          <div class="room-detail"><span><i class="fas fa-chart-line"></i> 48 canales</span> <span><i class="fas fa-drum"></i> ISO Booth</span></div>
+      <h2 class="section-title">Últimos proyectos mezclados en AKA</h2>
+      <div class="portfolio-grid">
+        <div class="track-card">
+          <div class="track-img"><i class="fas fa-music"></i></div>
+          <h3>“Noches en el Besòs”</h3>
+          <p>Artista: Lucia Grey · Mezcla y master analógico, lanzamiento digital 2025.</p>
+          <a href="#" class="track-link">Escuchar preview <i class="fas fa-play-circle"></i></a>
         </div>
-        <div class="room-card">
-          <div class="room-img" style="background-image: url('https://images.unsplash.com/photo-1511379938547-c1f69419868d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');"></div>
-          <h3>The Loft</h3>
-          <p>Estudio íntimo con acabados en madera, especial para productores, voces y sesiones acústicas.</p>
-          <div class="room-detail"><span><i class="fas fa-sliders-h"></i> Neve 1073</span> <span><i class="fas fa-guitar"></i> Amps vintage</span></div>
+        <div class="track-card">
+          <div class="track-img"><i class="fas fa-guitar"></i></div>
+          <h3>“Horizonte Eléctrico”</h3>
+          <p>Banda: Los Mánagers · Grabación completa + mezcla 80 en nuestra sala principal.</p>
+          <a href="#" class="track-link">Escuchar preview <i class="fas fa-play-circle"></i></a>
         </div>
-        <div class="room-card">
-          <div class="room-img" style="background-image: url('https://images.unsplash.com/photo-1598653222000-6b7b7a552625?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');"></div>
-          <h3>Mastering Suite</h3>
-          <p>Postproducción y mastering con monitores ATC, conversores de gama alta y tratamiento acústico referencia.</p>
-          <div class="room-detail"><span><i class="fas fa-waveform"></i> 5.1 Surround</span> <span><i class="fas fa-equalizer"></i> Maselec</span></div>
+        <div class="track-card">
+          <div class="track-img"><i class="fas fa-headphones"></i></div>
+          <h3>“Latidos” (EP)</h3>
+          <p>Productor: NikoBeats · Mastering en AKA Studio con resultado radiofónico.</p>
+          <a href="#" class="track-link">Escuchar preview <i class="fas fa-play-circle"></i></a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- EQUIPAMIENTO DESTACADO -->
+  <!-- UBICACIÓN: SANT ADRIÀ DE BESÒS -->
   <section>
     <div class="container">
-      <h2 class="section-title">Gear que inspira</h2>
-      <div class="gear-showcase">
-        <div class="gear-item"><i class="fas fa-microphone"></i><p>Neumann U87</p></div>
-        <div class="gear-item"><i class="fas fa-music"></i><p>API 1608</p></div>
-        <div class="gear-item"><i class="fas fa-guitar"></i><p>Fender '65 Twin</p></div>
-        <div class="gear-item"><i class="fas fa-headphones"></i><p>Audeze LCD-X</p></div>
-        <div class="gear-item"><i class="fas fa-database"></i><p>Pro Tools | HDX</p></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- UBICACIÓN BARCELONA -->
-  <section style="background: #0c0c12;">
-    <div class="container">
-      <h2 class="section-title">En el corazón de Barcelona</h2>
+      <h2 class="section-title">Estudio en Sant Adrià de Besòs</h2>
       <div class="location-box">
         <div class="location-info">
-          <h3><i class="fas fa-map-marker-alt"></i> Poblenou · Distrito 22@</h3>
-          <p>Carrer de Llull, 128, 08005 Barcelona</p>
-          <p><i class="fas fa-train"></i> Metro L4 · Llacuna | Bus H16, V27</p>
-          <p><i class="fas fa-clock"></i> Lunes a sábado: 10:00 – 22:00 · Domingos sesiones especiales bajo reserva.</p>
-          <p><i class="fas fa-parking"></i> Parking gratuito para músicos con equipo.</p>
-          <a href="#contacto" class="btn-gold" style="margin-top: 1rem; display: inline-block;">Cómo llegar</a>
+          <h3><i class="fas fa-map-marker-alt"></i> AKA Studio · Barcelona</h3>
+          <p><strong>Carrer de la Mina, 24 · 08930 Sant Adrià de Besòs</strong></p>
+          <p><i class="fas fa-train"></i> Metro L2 (Sant Adrià) · Tranvía T5, T6 | Bus B23, H10</p>
+          <p><i class="fas fa-clock"></i> Lunes a sábado: 10:00 – 22:00 · Domingos con reserva</p>
+          <p><i class="fas fa-parking"></i> Parking gratuito para músicos y fácil acceso desde el centro de Barcelona.</p>
+          <a href="#contacto" class="btn-gold" style="margin-top: 1rem; display: inline-block;">Pedir cita</a>
         </div>
-        <div class="map-placeholder">
-          <i class="fas fa-map-marked-alt fa-3x"></i>
-          <p><strong>📍 Zona creativa de Barcelona</strong><br> A 5 min del mar, rodeado de estudios y salas de conciertos.</p>
-          <small>Mapa interactivo — disponibilidad bajo cita</small>
+        <div class="map-container">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2993.249447029574!2d2.214695315864384!3d41.41648147925985!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a4bbe1a7a9b5c3%3A0x9f7b2c1e6a8b5d4!2sSant%20Adri%C3%A0%20de%20Bes%C3%B2s%2C%20Barcelona!5e0!3m2!1ses!2ses!4v1617280000000!5m2!1ses!2ses" allowfullscreen="" loading="lazy"></iframe>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- TESTIMONIOS -->
+  <!-- TESTIMONIOS REALES -->
   <section class="testimonials">
     <div class="container">
-      <h2 class="section-title">Lo que dicen los artistas</h2>
+      <h2 class="section-title">Artistas que confían en AKA</h2>
       <div class="testi-grid">
-        <div class="testi-card">
-          <p>"AKA Studio es el lugar donde dimos vida a nuestro último disco. El equipo técnico es impecable y la acústica de la sala principal es alucinante. Barcelona tiene un nuevo templo del sonido."</p>
-          <h4>— Maria V. · productora</h4>
-        </div>
-        <div class="testi-card">
-          <p>"He trabajado en estudios de Londres y Berlín, pero la vibra y el equipo de AKA están a otro nivel. El loft es perfecto para sesiones de voz, y el trato humano es lo mejor."</p>
-          <h4>— J. Keaton · cantautor</h4>
-        </div>
-        <div class="testi-card">
-          <p>"El mastering suite es una joya. Conseguimos un master competitivo con una claridad impresionante. Sin duda repetiré para mi próximo proyecto."</p>
-          <h4>— D. Rios · ingeniero de mezcla</h4>
-        </div>
+        <div class="testi-card"><p>"La mezcla que hicieron para mi single sonó increíble en todas las plataformas. El mastering 80 le dio ese cuerpo que buscaba."</p><h4>— Marina Soto · cantautora</h4></div>
+        <div class="testi-card"><p>"El mejor estudio de Sant Adrià. Trato cercano, equipo de primera y resultados profesionales. Volveré para el próximo álbum."</p><h4>— Juan Carlos · productor</h4></div>
+        <div class="testi-card"><p>"El servicio de mezcla y master es insuperable. Entienden el sonido que queremos y lo potencian al máximo."</p><h4>— The Velvet Haze · banda</h4></div>
       </div>
     </div>
   </section>
 
-  <!-- CONTACTO Y RESERVA -->
+  <!-- CONTACTO + FORMULARIO formspree -->
   <section id="contacto">
     <div class="container">
-      <h2 class="section-title">Reserva tu sesión</h2>
+      <h2 class="section-title">Contacta con AKA Studio</h2>
+      <div class="contact-info-bar">
+        <p><i class="fas fa-envelope"></i> <strong>adibelguarafi@gmail.com</strong> · <i class="fas fa-phone-alt"></i> +34 678 90 12 34</p>
+        <p><i class="fab fa-instagram"></i> Síguenos: <a href="https://www.instagram.com/aka_thestudio/" target="_blank" style="color:#c9a53b;">@aka_thestudio</a></p>
+      </div>
       <div class="contact-form">
-        <form id="contactForm" action="#" method="post">
+        <form action="https://formspree.io/f/xpqodegw" method="POST">
           <div class="form-group">
-            <input type="text" id="nombre" placeholder="Nombre completo *" required>
+            <input type="text" name="nombre" placeholder="Nombre completo *" required>
           </div>
           <div class="form-group">
-            <input type="email" id="email" placeholder="Email *" required>
+            <input type="email" name="email" placeholder="Email *" required>
           </div>
           <div class="form-group">
-            <input type="tel" id="telefono" placeholder="Teléfono (opcional)">
+            <input type="tel" name="telefono" placeholder="Teléfono">
           </div>
           <div class="form-group">
-            <select id="salaInteres" style="background:#1c1c24; color:white; padding:1rem; border-radius:24px; width:100%; border:1px solid #2f2f38;">
-              <option value="Sala Main AKA">Sala Main AKA</option>
-              <option value="The Loft">The Loft</option>
-              <option value="Mastering Suite">Mastering Suite</option>
-              <option value="No estoy seguro/a">No estoy seguro/a, quiero asesoría</option>
+            <select name="servicio_interes">
+              <option value="80 Mezcla y Master">80 Mezcla y Master (servicio estrella)</option>
+              <option value="Grabación profesional">Grabación profesional</option>
+              <option value="Producción musical">Producción musical</option>
+              <option value="Otro">Otro / consulta</option>
             </select>
           </div>
           <div class="form-group">
-            <textarea rows="3" id="mensaje" placeholder="Cuéntanos sobre tu proyecto, fechas deseadas..."></textarea>
+            <textarea name="mensaje" rows="3" placeholder="Cuéntanos tu proyecto o fecha deseada..."></textarea>
           </div>
-          <button type="submit" class="submit-btn"><i class="fas fa-calendar-check"></i> Solicitar presupuesto</button>
-          <p id="form-feedback" style="margin-top: 1rem; font-size: 0.85rem; text-align: center;"></p>
+          <button type="submit" class="submit-btn"><i class="fas fa-paper-plane"></i> Enviar consulta</button>
+          <p style="font-size: 0.75rem; margin-top: 1rem; text-align: center;">Recibirás respuesta en menos de 24h.</p>
         </form>
       </div>
     </div>
@@ -616,89 +544,48 @@
 
 <footer>
   <div class="social-icons">
-    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+    <a href="https://www.instagram.com/aka_thestudio/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
     <a href="#" aria-label="Spotify"><i class="fab fa-spotify"></i></a>
-    <a href="#" aria-label="Youtube"><i class="fab fa-youtube"></i></a>
-    <a href="#" aria-label="SoundCloud"><i class="fab fa-soundcloud"></i></a>
+    <a href="#" aria-label="Youtube Music"><i class="fab fa-youtube"></i></a>
   </div>
-  <p style="margin-top: 1.5rem; font-size: 0.8rem;">&copy; 2025 AKA STUDIO · Estudio musical Barcelona · Poblenou · <i class="fas fa-head-side-headphones"></i> Donde los sueños suenan en grande</p>
+  <p style="margin-top: 1rem;">&copy; 2025 AKA STUDIO · Estudio musical Sant Adrià de Besòs · Sonido analógico, pasión por la música</p>
+  <p style="font-size:0.7rem;">Carrer de la Mina, 24 · 08930 · adibelguarafi@gmail.com</p>
 </footer>
 
 <script>
-  // Mobile menu toggle
   const mobileBtn = document.getElementById('mobile-menu');
   const navList = document.getElementById('nav-list');
-  mobileBtn.addEventListener('click', () => {
-    navList.classList.toggle('active');
+  mobileBtn.addEventListener('click', () => navList.classList.toggle('active'));
+  document.querySelectorAll('.nav-link').forEach(link => {
+    link.addEventListener('click', () => navList.classList.remove('active'));
   });
-
-  // Cerrar menú al hacer click en un enlace
-  const navLinks = document.querySelectorAll('.nav-link');
-  navLinks.forEach(link => {
-    link.addEventListener('click', () => {
-      navList.classList.remove('active');
-    });
-  });
-
-  // Scroll suave para enlaces internos (todos los que empiezan con #)
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
       const targetId = this.getAttribute('href');
       if(targetId === "#" || targetId === "") return;
-      const targetElement = document.querySelector(targetId);
-      if(targetElement) {
+      const target = document.querySelector(targetId);
+      if(target) {
         e.preventDefault();
-        targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        // Si el menú está activo en móvil lo cerramos
+        target.scrollIntoView({ behavior: 'smooth' });
         if(navList.classList.contains('active')) navList.classList.remove('active');
       }
     });
   });
-
-  // Simple form handler (simulación de envío + feedback)
-  const form = document.getElementById('contactForm');
-  const feedback = document.getElementById('form-feedback');
-  form.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const nombre = document.getElementById('nombre').value.trim();
-    const email = document.getElementById('email').value.trim();
-    if(!nombre || !email) {
-      feedback.innerHTML = '<span style="color:#e0b852;">⚠️ Por favor, completa nombre y email.</span>';
-      return;
-    }
-    // Simulación de envío exitoso
-    feedback.innerHTML = '<span style="color:#c9a53b;">✨ ¡Gracias! Nos pondremos en contacto en 24h para coordinar tu sesión en Barcelona ✨</span>';
-    form.reset();
-    setTimeout(() => {
-      feedback.innerHTML = '';
-    }, 5000);
-  });
-
-  // Resaltar link activo según scroll
+  // Scroll active link
   const sections = document.querySelectorAll("section");
   const navItems = document.querySelectorAll(".nav-link");
   window.addEventListener("scroll", () => {
     let current = "";
     sections.forEach(section => {
-      const sectionTop = section.offsetTop - 120;
-      const sectionBottom = sectionTop + section.offsetHeight;
-      if(scrollY >= sectionTop && scrollY < sectionBottom) {
-        current = section.getAttribute("id");
-      }
+      const top = section.offsetTop - 120;
+      const bottom = top + section.offsetHeight;
+      if(scrollY >= top && scrollY < bottom) current = section.getAttribute("id");
     });
     navItems.forEach(item => {
       item.classList.remove("active");
-      if(item.getAttribute("href") === `#${current}`) {
-        item.classList.add("active");
-      }
+      if(item.getAttribute("href") === `#${current}`) item.classList.add("active");
     });
-    // Si no hay sección activa (por hero) o inicio
-    if(!current && window.scrollY < 200) {
-      navItems.forEach(link => {
-        if(link.getAttribute("href") === "#inicio") link.classList.add("active");
-        else link.classList.remove("active");
-      });
-    }
+    if(!current && window.scrollY < 200) document.querySelector('.nav-link[href="#inicio"]')?.classList.add("active");
   });
 </script>
 </body>
